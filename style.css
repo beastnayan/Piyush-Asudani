@@ -335,17 +335,140 @@
 #section-4{
     height: 100vh;
     background-color: #181818;
+    display: flex;
+    /* position: absolute; */
+
 }
 
 #accordian-content{
     height: 600px;
     width: 550px;
-    background-color: grey;
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    top: 100px;
+    left: 150px ;
+    
+   
 
 }
 
 #our-services p{
   color: #F97C5A;
+  font-size: 25px;
+  height: 30px;
+}
+
+#accordian-item{
+    margin-top: 40px;
+    /* height: 110px; */
+    border-bottom: 1px solid white;
+
+}
+
+#label{
+    display :flex;
+    margin-bottom: 10px;
+}
+
+#serial-no p{
+ background-color: #2e211e;
+ color: white;
+ height: 30px;
+ width: 30px;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+#name{
+    position:relative;
+    left: 15px;
+    top: 4px;
+    font-size: 20px;
+    color: white;
+    width: 25%;
+
+
+}
+
+#drop-down{
+ margin-left: 350px;
+ color: white;
+
+}
+
+/* #drop-down p{
+  
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+
+} */
+
+#drop-down-content{
+    display: none;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#drop-down-content ul{
+
+    position: relative;
+    top: 10px;
+    left: 30px;
+
+}
+
+#viewall-btn{
+    margin-top: 40px;
+    padding: 8px 15px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid #F97C5A;
+    color: #F97C5A;
+}
+
+#sec-4-side-img img{
+    height: 450px;
+    width: 500px;
+    position: relative;
+    top: 100px;
+    left: 300px;
+    object-fit: cover;
+}
+
+
+#section-5{
+    height: 100vh;
+    background-color: #0c0c0c;
+}
+
+#heading .bttm-line{
+    color: white;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+#cards-block{
+  position: relative;
+  top:150px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#card-1 img{
+    height: 380px;
+    width: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+#card-1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%; 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
 }
