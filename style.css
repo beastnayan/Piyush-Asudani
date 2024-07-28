@@ -505,7 +505,7 @@
 
 #right-to-left{
     position: relative;
-    top: 150px;
+    top: 100px;
     height: 200px;
     white-space: nowrap;
     display: flex;
@@ -538,7 +538,7 @@
   
     height: 200px;
     position: relative;
-    top: 200px;
+    top: 110px;
     white-space: nowrap;
     display: flex;
     justify-content: flex-end;
@@ -553,4 +553,168 @@
     height:150px;
     margin-left: 10px;
     animation: 15s sliderighttoleft  linear infinite;
+}
+
+
+#section-7{
+    height: 70vh;
+    background-color: #0c0c0c;
+}
+
+
+
+
+#allcard-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#cardcontainer{
+  
+    position: relative;
+    top: 100px;
+    height: 250px;
+    width: 350px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba( 255,255,255, 0));
+    backdrop-filter: blur(10px);
+}
+
+#card1 .industry-title{
+    color: white;
+    position: relative;
+    top: 20px;
+    left: 30px;
+
+}
+
+#card1 .industry-para{
+    color: white;
+    position: relative;
+    top: 40px;
+    left: 30px;
+    width: 300px;
+
+}
+
+
+#card1 a{
+   color: white;
+   position: relative;
+   left: 30px;
+   top: 70px;
+}
+
+#number-container{
+    
+    display: flex;
+    position: relative;
+    left: 30px;
+}
+
+#number1{
+    color: white;
+    position: relative;
+    left: 8px;
+    top: 120px;
+    font-size: 50px;
+}
+
+#number2{
+    color: white;
+    position: relative;
+    left: 330px;
+    top: 120px;
+    font-size: 50px;
+}
+
+#number3{
+    color: white;
+    position: relative;
+    left: 650px;
+    top: 120px;
+    font-size: 50px;
+}
+
+#number4{
+    color: white;
+    position: relative;
+    left: 980px;
+    top: 120px;
+    font-size: 50px;
+}
+
+#viewbtn{
+    position: relative;
+    top: 130px;
+    left: 47%;
+    border: none;
+    background-color: transparent;
+    color: #F97C5A;
+    border: 1px solid #F97C5A;
+    padding: 8px 25px;
+}
+
+
+
+#section-8{
+    height: 100vh;
+    background-color: #181818;
+
+}
+
+#alldiv{
+    position: relative;
+    top:130px;
+    left: 150px;
+    
+}
+
+#outerdiv{
+    width: 80%;
+    height: 380px;
+    border: 1px solid #383838;
+    border-radius:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#innerdiv{
+    width: 90%;
+    height: 80%;
+    border: 1px solid #222222;
+    border-radius:20px;
+    background-color: #222222;
+}
+
+#innerdiv .name{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+#innerdiv .para{
+    text-align: center;
+    top: 50px;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    color: white;
+   
+}
+
+
+#rating-star ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+}
+
+#rating-star ul li{
+    color: #F97C5A;
 }
