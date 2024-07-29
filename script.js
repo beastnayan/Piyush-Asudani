@@ -1,145 +1,110 @@
+let dropdownbtn = document.querySelectorAll("#drop-down button");
+let dropdowncontent = document.querySelectorAll("#drop-down-content");
 
-let dropdownbtn = document.querySelectorAll("#drop-down")
-let dropdowncontent = document.querySelectorAll("#drop-down-content")
-
-let getimages = document.querySelectorAll("#image-1")
-let getUsername = document.getElementById("username")
-let getStudy = document.getElementById("study")
-let getDiscription = document.getElementById("discription")
-let getUlList = document.getElementById("ul-list")
-let getMainStarDiv = document.getElementById("rating-star")
-let getImageContainer = document.getElementById("img-containers")
-
-
-
-let ima
-
-console.log(getMainStarDiv)
-
+let getimages = document.querySelectorAll(".image-1");
+let getUsername = document.getElementById("username");
+let getStudy = document.getElementById("study");
+let getDiscription = document.getElementById("discription");
+let getUlList = document.getElementById("ul-list");
+let getImageContainer = document.getElementById("img-containers");
 
 for (let i = 0; i < dropdownbtn.length; i++) {
-    
-    dropdownbtn[i].addEventListener("click" , function(){
-        this.classList.toggle("active")
-      
+    dropdownbtn[i].addEventListener("click", function() {
+        this.classList.toggle("active");
 
-        if( dropdowncontent[i].style.display == "block"){
-            dropdownbtn[i].innerHTML = "+"
+        if (dropdowncontent[i].style.display == "block") {
+            dropdownbtn[i].innerHTML = "+";
             dropdowncontent[i].style.display = "none";
-        }else{
-            dropdownbtn[i].innerHTML = "-"
+        } else {
+            dropdownbtn[i].innerHTML = "-";
             dropdowncontent[i].style.display = "block";
         }
-        
-    })
+    });
 }
 
-
 let imagedetails = [
-
     {
         id: 1,
-        username : "Tom Holland",
-        study : "BA PAss",
-        img : "./images/adidas.png",
-        shortdiscription : "Turpis porttitor et turpis sagittis luctus adipiscing duis lacus quis. Risus lorem dolor velit velit laoreet viverra. Adipiscing nec amet sit facilisis. Vestibulum velit consequat lorem maecenas dignissim egestas.",
+        username: "Tom Holland",
+        study: "BA Pass",
+        shortdiscription: "Turpis porttitor et turpis sagittis luctus adipiscing duis lacus quis. Risus lorem dolor velit velit laoreet viverra. Adipiscing nec amet sit facilisis. Vestibulum velit consequat lorem maecenas dignissim egestas.",
         stars: 3
-
     },
     {
         id: 2,
-        username : "lionel Messi",
-        study : "Mechanical engg",
-        img : "./images/ibm.png",
-        shortdiscription : "Barcelona",
+        username: "Lionel Messi",
+        study: "Mechanical engg",
+        shortdiscription: "Barcelona",
         stars: 5
-
     },
     {
         id: 3,
-        username : "cristiano Ronaldo",
-        study : "10th fail",
-        img : "./images/isweel.png",
-        shortdiscription :"America",
+        username: "Cristiano Ronaldo",
+        study: "10th fail",
+        shortdiscription: "America",
         stars: 2
-
     },
     {
         id: 4,
-        username : "Sam Methew",
-        study : "Lawyer",
-        img : "./images/adidas.png",
-        shortdiscription : "London",
+        username: "Sam Methew",
+        study: "Lawyer",
+        shortdiscription: "London",
         stars: 1
-
-
     },
     {
         id: 5,
-        username : "Jerom Fernandis",
-        study : "Lecturer",
-        img : "./images/adidas.png",
-        shortdiscription : " velit .",
+        username: "Jerom Fernandis",
+        study: "Lecturer",
+        shortdiscription: " velit .",
         stars: 4
-
     }
-]
+];
 
+getimages.forEach((eachitem) => {
+    eachitem.addEventListener("click", function(e) {
+        let id = this.getAttribute("image-id");
+        console.log(id);
+        let imageData = imagedetails.find(img => img.id == id);
 
-
-getimages.forEach((eachitem) =>{
-
-
-    eachitem.addEventListener("click" , function(e){
-        let id = this.getAttribute("image-id")
-        let imageData = imagedetails.find(img => img.id == id)
-
-        if(imageData){
-            getUsername.textContent= imageData.username;
+        if (imageData) {
+            getUsername.textContent = imageData.username;
             getStudy.textContent = imageData.study;
-            getDiscription.textContent = imageData.shortdiscription
+            getDiscription.textContent = imageData.shortdiscription;
             getUlList.textContent = "";
-
 
             let length = imageData.stars;
 
-            for (let i = 0; i < length ; i++) {
-                let li = document.createElement("li")
-                let stars = document.createElement("i")
-                stars.classList.add("fa-solid", "fa-star")
-                li.appendChild(stars)
-                getUlList.appendChild(li)
-
+            for (let i = 0; i < length; i++) {
+                let li = document.createElement("li");
+                let stars = document.createElement("i");
+                stars.classList.add("fa-solid", "fa-star");
+                li.appendChild(stars);
+                getUlList.appendChild(li);
             }
 
-        }
+            // Rearrange images to center the clicked image
+            let imgContainers = Array.from(document.getElementById('img-containers').children);
+            let index = imgContainers.findIndex(img => img.getAttribute('image-id') == id);
+            let centerIndex = Math.floor(imgContainers.length / 2);
+            let newOrder = [];
 
+            for (let i = 0; i < imgContainers.length; i++) {
+                newOrder[(i + centerIndex - index + imgContainers.length) % imgContainers.length] = imgContainers[i];
+            }
 
-       
-        
-        getimages.forEach((eachitem) => {
-            eachitem.addEventListener('click', function(e){
-                let selectedImg = e.target;
-                removeClass()
-             
-                selectedImg.classList.add("selected");
-        
-                let createneworder = Array.from(getimages).filter(img => img !== selectedImg)
-                let  middleIndex = Math.floor(createneworder.length / 2);
-                createneworder.splice(middleIndex, 0, selectedImg);
-        
-                console.log(middleIndex)
-        
-                // imgContainer.innerHTML = '';+
-                createneworder.forEach(img => getImageContainer.appendChild(img));
+            let imgContainersParent = document.getElementById('img-containers');
+            imgContainersParent.innerHTML = '';
+            newOrder.forEach(img => imgContainersParent.appendChild(img));
+
+            // Apply CSS classes for image sizes
+            newOrder.forEach((img, i) => {
+                img.classList.remove('img-center', 'img-small');
+                if (i === centerIndex) {
+                    img.classList.add('img-center');
+                } else if (i === 0 || i === newOrder.length - 1) {
+                    img.classList.add('img-small');
+                }
             });
-        });
-    })
-
-})
-
-
-
-function removeClass(){
-    getimages.forEach(img => img.classList.remove("selected"))
-}
+        }
+    });
+});
