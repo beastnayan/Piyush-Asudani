@@ -21,7 +21,9 @@
     background-color: black;
     background-image: url("./images/officewebp.webp");
     height: 100vh;
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 #nav-container{
@@ -115,6 +117,8 @@
     display: flex;
 }
 
+
+
 #card-container{
     height: 400px;
     width: 500px;
@@ -163,21 +167,44 @@
     top: 10px;
 }
 
-#client-content{
-  
+
+#media-impression{
+    position: relative;
+    top: 110px;
+    height: 200px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
-#single-client{
-    position: relative;
-    top: 130px;
-    margin-left: 50px;
+#each-div{
+    height: 180px;
+    width: 180px;
+}
 
-    background-color: pink;
+.count{
+    margin-top: 40px;
+    margin-left: 75px;
+    font-size: 20px;
     color: white;
+
 }
 
+.tag-name{
+    margin-top: 25px;
+    margin-left: 50px;
+    font-size: 20px;
+    color: grey;
+
+}
+
+#icon i{
+  position: relative;
+  top: 10px;
+  left: 70px;
+  font-size: 40px;
+  color: white;
+}
 
 #part-1{
     height: 50vh;
