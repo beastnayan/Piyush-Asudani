@@ -8,7 +8,11 @@ let getStudy = document.getElementById("study")
 let getDiscription = document.getElementById("discription")
 let getUlList = document.getElementById("ul-list")
 let getMainStarDiv = document.getElementById("rating-star")
+let getImageContainer = document.getElementById("img-containers")
 
+
+
+let ima
 
 console.log(getMainStarDiv)
 
@@ -86,7 +90,7 @@ let imagedetails = [
 getimages.forEach((eachitem) =>{
 
 
-    eachitem.addEventListener("click" , function(){
+    eachitem.addEventListener("click" , function(e){
         let id = this.getAttribute("image-id")
         let imageData = imagedetails.find(img => img.id == id)
 
@@ -98,7 +102,6 @@ getimages.forEach((eachitem) =>{
 
 
             let length = imageData.stars;
-            console.log(length)
 
             for (let i = 0; i < length ; i++) {
                 let li = document.createElement("li")
@@ -110,5 +113,33 @@ getimages.forEach((eachitem) =>{
             }
 
         }
+
+
+       
+        
+        getimages.forEach((eachitem) => {
+            eachitem.addEventListener('click', function(e){
+                let selectedImg = e.target;
+                removeClass()
+             
+                selectedImg.classList.add("selected");
+        
+                let createneworder = Array.from(getimages).filter(img => img !== selectedImg)
+                let  middleIndex = Math.floor(createneworder.length / 2);
+                createneworder.splice(middleIndex, 0, selectedImg);
+        
+                console.log(middleIndex)
+        
+                // imgContainer.innerHTML = '';+
+                createneworder.forEach(img => getImageContainer.appendChild(img));
+            });
+        });
     })
+
 })
+
+
+
+function removeClass(){
+    getimages.forEach(img => img.classList.remove("selected"))
+}

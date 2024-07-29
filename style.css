@@ -1,12 +1,27 @@
+@font-face {
+    font-family: "myfont";
+    src: url(Fonts/belgium2/Belgium.otf ) format("opentype") , url(Fonts/belgium2/Belgium\ Italic.otf) format("opentype");
+    
+}
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "myfont";
+
 }
 
 
 #section-1{
-    background-color: grey;
+    background-color: black;
+    background-image: url("./images/officewebp.webp");
     height: 100vh;
+    object-fit: cover;
 }
 
 #nav-container{
@@ -65,7 +80,7 @@
 .content1{
     width: 60%;
     position: relative;
-    color: white;
+    color: grey;
     top: 180px;
     left: 300px;
     font-size: 15px;
@@ -104,8 +119,7 @@
     height: 400px;
     width: 500px;
     position: relative;
-    background-color: pink;
-    top: 80px;
+    top: 70px;
     left: 80px;
 }
 
@@ -136,7 +150,7 @@
 }
 
 #paragraph{
-   color: white;
+   color: grey;
 }
 
 #see-more-btn{
@@ -329,7 +343,7 @@
     margin-top: 20px;
     width: 300px;
     text-align: center;
-    color: white;
+    color: grey;
 
 }
 
@@ -408,7 +422,7 @@
 #drop-down-content{
     display: none;
     margin-bottom: 20px;
-    color: white;
+    color: grey;
 }
 
 #drop-down-content ul{
@@ -446,7 +460,7 @@
 }
 
 #heading .bttm-line{
-    color: white;
+    color: grey;
     margin-top: 15px;
     font-size: 15px;
 }
@@ -588,15 +602,18 @@
     position: relative;
     top: 20px;
     left: 30px;
+    font-weight: bolder;
 
 }
 
 #card1 .industry-para{
-    color: white;
+    color: grey;
     position: relative;
     top: 40px;
     left: 30px;
     width: 300px;
+    font-size: 12px;
+
 
 }
 
@@ -605,7 +622,8 @@
    color: white;
    position: relative;
    left: 30px;
-   top: 70px;
+   top: 100px;
+   cursor: pointer;
 }
 
 #number-container{
@@ -675,6 +693,8 @@
     
 }
 
+
+
 #outerdiv{
     width: 80%;
     height: 380px;
@@ -696,6 +716,12 @@
 #innerdiv .name{
     text-align: center;
     margin-top: 20px;
+    color: grey;
+}
+
+#innerdiv #username{
+    text-align: center;
+    margin-top: 20px;
     color: white;
 }
 
@@ -705,7 +731,7 @@
     position: relative;
     left: 25%;
     width: 50%;
-    color: white;
+    color: grey;
    
 }
 
@@ -738,7 +764,6 @@
 
 
 #input-type{
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -753,7 +778,7 @@
     background-color: transparent;
     border: none;
     border: 1px solid #F97C5A;
-    height: 20px;
+    height: 42px;
     width: 300px;
     padding: 10px;
 }
@@ -829,14 +854,15 @@ footer{
     margin-top: 25px;
 }
 
-#img-container{
+#img-containers{
     height: 60px;
-    position: relative;
-    top: 180px;
+    /* position: relative; */
+    /* top: 180px; */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 180px;
 }
 
 #image-1 img{
@@ -846,6 +872,6 @@ footer{
     border-radius: 50%;
 }
 
-.popup img{
+/* .popup img{
     transform: scale(1.4);
-}
+} */
