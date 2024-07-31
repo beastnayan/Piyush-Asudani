@@ -105,6 +105,131 @@
  
 }
 
+#section-1 {
+    background-color: black;
+    background-image: url("./images/officewebp.webp");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#nav-container {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+#nav-container img {
+    position: absolute;
+    height: 110px;
+    width: 200px;
+    margin-left: 100px;
+}
+
+#list-item ul {
+    display: flex;
+    margin-left: 900px;
+}
+
+#list-item ul li {
+    margin-left: 30px;
+    list-style-type: none;
+    color: white;
+}
+
+#nav-container button {
+    margin-left: 40px;
+    padding: 8px 18px;
+    border-style: none;
+    border: 1px solid #F97C5A;
+    background-color: transparent;
+    color: #F97C5A;
+}
+
+#content-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content {
+    position: relative;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 180px;
+    line-height: 50px;
+}
+
+.content1 {
+    width: 60%;
+    position: relative;
+    color: grey;
+    top: 180px;
+    left: 300px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#exp-btn {
+    position: relative;
+    top: 230px;
+    left: 48%;
+    border: none;
+    background-color: #F97C5A;
+    color: white;
+    padding: 8px 15px;
+}
+
+/* Media Query for max-width 600px */
+@media (max-width: 600px) {
+    #nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav-container img {
+        margin: 0;
+        height: auto;
+        width: 150px;
+        position: static;
+    }
+
+    #list-item {
+        display: none;
+    }
+
+    #nav-container button {
+        display: none;
+    }
+
+    .content {
+        top: 100px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .content1 {
+        width: 70%;
+        left: 15%;
+        top: 120px;
+        background-color: green;
+        
+    }
+
+    #exp-btn {
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
 
 
 #section-2{
