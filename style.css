@@ -31,19 +31,21 @@
     height: 110px;
     display: flex;
     align-items: center;
+    justify-content: space-between  ;
     border-bottom: 1px solid white;
+    padding: 30px;
+}
+
+.nav-links{
+    display: flex;
 }
 
 #nav-container img {
-    position: absolute;
-    height: 110px;
     width: 200px;
-    margin-left: 100px;
 }
 
 #list-item ul {
     display: flex;
-    margin-left: 900px;
 }
 
 #list-item ul li {
@@ -111,25 +113,18 @@
  #section-2{
     background-color: black;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
 #card-container{
     display: flex;
-}
-
-
-
-#card-container{
-    height: 400px;
-    width: 500px;
-    position: relative;
-    top: 70px;
-    left: 80px;
+    flex-direction: column  ;
+    align-items: center;
 }
 
 #img-container img{
-    position: relative;
     height: 400px;
     width: 500px;
     object-fit: cover;
@@ -138,17 +133,10 @@
 
 
 #aboutus-content{
-
-    /* background-color: pink; */
-    position: relative;
-    width: 650px;
-    height: 330px;
-    top: 30px;
-    left: 30px;
+    padding: 30px;
 }
 
 #about{
-
    color: #F97C5A;
    width: 650px;
    font-size: 25px;
