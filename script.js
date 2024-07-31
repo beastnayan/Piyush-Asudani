@@ -1,4 +1,4 @@
-let dropdownbtn = document.querySelectorAll("#drop-down button");
+let dropdownbtn = document.querySelectorAll("#drop-down");
 let dropdowncontent = document.querySelectorAll("#drop-down-content");
 
 let getimages = document.querySelectorAll(".image-1");
@@ -8,20 +8,30 @@ let getDiscription = document.getElementById("discription");
 let getUlList = document.getElementById("ul-list");
 let getImageContainer = document.getElementById("img-containers");
 
+console.log(dropdownbtn)
 for (let i = 0; i < dropdownbtn.length; i++) {
     dropdownbtn[i].addEventListener("click", function() {
-        this.classList.toggle("active");
+        // Close all dropdown contents
+        for (let j = 0; j < dropdowncontent.length; j++) {
+            if (j !== i) {
+                dropdowncontent[j].style.display = "none";
+                dropdownbtn[j].innerHTML = "+";
+            }
+        }
 
-        if (dropdowncontent[i].style.display == "block") {
+        // Toggle the clicked dropdown content
+        this.classList.toggle("active");
+        if (dropdownbtn[i].style.display == "block") {
             dropdownbtn[i].innerHTML = "+";
             dropdowncontent[i].style.display = "none";
+            
         } else {
             dropdownbtn[i].innerHTML = "-";
             dropdowncontent[i].style.display = "block";
+            console.log("hjf")
         }
     });
 }
-
 let imagedetails = [
     {
         id: 1,
