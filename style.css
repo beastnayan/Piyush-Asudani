@@ -71,6 +71,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
     background-color: blue;
@@ -78,9 +79,10 @@
     height: 450px;
 }
 
+
  .content {
     color: white;
-    font-size: 30px;
+    font-size: 30px;    
     text-align: center;
     line-height: 50px;
 }
@@ -89,216 +91,18 @@
     width: 60%;
     color: grey;
     font-size: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0px 20px 300px;
-     
+    text-align: center;
 
 }
 
 #exp-btn {
-   
     border: none;
     background-color: #F97C5A;
     color: white;
     padding: 8px 15px;
-    /* margin-left: 47%; */
     margin-top: 30px;
     width: 130px;
 }
-
-/* Media Query for max-width 600px */
-@media (max-width: 600px) {
-    #nav-container {
-        flex-direction: column;
-        align-items: center;
-        background-color: green;
-    }
-
-    #nav-container img {
-        margin: 0;
-        height: auto;
-        width: 150px;
-        position: static;
-    }
-
-     #list-item {
-        display: none;
-    }
-
-
-
-    #nav-container button {
-        display: none;
-    }
-
-
-    #center-content-para{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-        
-    .content {
-        top: 100px;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .content1 {
-        background-color: green;
-        color: black;
-        width: 80%;
-        color: grey;
-        font-size: 15px;
-        margin: 10px 0px 10px 0;
-
-    }
-
-    #exp-btn {
-      
-        /* margin-top: 30px;
-        width: 130px; */
-    } 
-} 
-
-/* @media (min-width: 601px) {
-    #nav-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #nav-container img {
-        margin: 0;
-        height: auto;
-        width: 150px;
-        position: static;
-    }
-
-    #list-item {
-        display: none;
-    }
-
-    #nav-container button {
-        display: none;
-    }
-
-
-    #center-content-para{
-        background-color: orange;
-        height: 500px;
-    }
-    .content {
-        top: 100px;
-        font-size: 24px;
-        background-color: blue;
-        width: 100%;
-        padding-left:20px;
-        padding-right:20px; Ensure some padding on smaller screens
-    }
-
-    .content1 {
-        width: 70%;
-        left: 22%;
-        top: 120px;
-        /* background-color: green; 
-        color: black;
-    }
-
-    #exp-btn {
-        top: 150px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-} */
-
-/* @media (min-width: 992px) {
-    #nav-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #nav-container img {
-        margin: 0;
-        height: auto;
-        width: 150px;
-        position: static;
-    }
-
-    #list-item {
-        display: none;
-    }
-
-    #nav-container button {
-        display: none;
-    }
-
-    .content {
-        top: 100px;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .content1 {
-        width: 70%;
-        left: 15%;
-        top: 120px;
-        background-color: green;
-        color: black;
-    }
-
-    #exp-btn {
-        top: 150px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media (max-width: 600px) {
-    #nav-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #nav-container img {
-        margin: 0;
-        height: auto;
-        width: 150px;
-        position: static;
-    }
-
-    #list-item {
-        display: none;
-    }
-
-    #nav-container button {
-        display: none;
-    }
-
-    .content {
-        top: 100px;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .content1 {
-        width: 70%;
-        left: 15%;
-        top: 120px;
-        background-color: green;
-        color: black;
-    }
-
-    #exp-btn {
-        top: 150px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-} */
-
 
  /* ------------------------------------------section -2 --------------------------------------------- */
 
