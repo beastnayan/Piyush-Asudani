@@ -163,7 +163,6 @@
 
 #about{
    color: #F97C5A;
-   width: 650px;
    font-size:2rem;
    padding-bottom: 10px;
 
@@ -584,7 +583,7 @@
     height: 100vh;
     background-color: #181818;
     display: flex;
-    justify-content:space-evenly;
+    justify-content:center;
     align-items: center;
 
 }
@@ -634,7 +633,7 @@
 }
 
 #drop-down{
- margin-left: 350px;
+ /* margin-left: 350px; */
  color: white;
 
 }
@@ -653,11 +652,7 @@
 }
 
 #drop-down-content ul{
-/* 
-    position: relative;
-    top: 10px;
-    left: 30px; */
-    padding: 0 30px;
+    /* padding: 0 30px; */
 
 }
 
@@ -671,7 +666,7 @@
 }
 
 #sec-4-side-img img{
-    /* height: 0%; */
+    padding: 10px;
     align-items: center;
      width: 100%;
    
@@ -692,7 +687,7 @@
     }
 
     #section-4{
-        height: 100vh;
+        /* height: 100vh; */
         background-color: #181818;
         display: flex;
         justify-content: center;
@@ -916,7 +911,7 @@
 
 
 #section-7{
-    height: 70vh;
+    padding: 30px;
     background-color: #0c0c0c;
 
 }
@@ -1001,9 +996,9 @@
     #industry-card-container{
         width:100%;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        /* flex-direction: column; */
+        /* justify-content: center;
+        align-items: center; */
+        flex-direction: column;
     }
     
     #industry-card{
