@@ -1,5 +1,10 @@
+
+// ------------------accordian-property-declareation------------------------
+
 let dropdownbtn = document.querySelectorAll("#drop-down");
 let dropdowncontent = document.querySelectorAll("#drop-down-content");
+
+// ------------------section-8 variable ------------------------
 
 let getimages = document.querySelectorAll(".image-1");
 let getUsername = document.getElementById("username");
@@ -8,7 +13,19 @@ let getDiscription = document.getElementById("discription");
 let getUlList = document.getElementById("ul-list");
 let getImageContainer = document.getElementById("img-containers");
 
+
+// ------------------section-5 variable ------------------------
+
+
+let currentCardIndex = 0;
+const cards = document.querySelectorAll('#cards-block #card-1');
+const mobileView = window.matchMedia("(max-width: 600px)").matches;
+
+
 console.log(dropdownbtn)
+
+// ------------------saccordian logic ------------------------
+
 for (let i = 0; i < dropdownbtn.length; i++) {
     dropdownbtn[i].addEventListener("click", function() {
         // Close all dropdown contents
@@ -21,17 +38,21 @@ for (let i = 0; i < dropdownbtn.length; i++) {
 
         // Toggle the clicked dropdown content
         this.classList.toggle("active");
-        if (dropdownbtn[i].style.display == "block") {
+        if (dropdowncontent[i].style.display === "block") {
             dropdownbtn[i].innerHTML = "+";
             dropdowncontent[i].style.display = "none";
-            
+            console.log("if");
         } else {
             dropdownbtn[i].innerHTML = "-";
             dropdowncontent[i].style.display = "block";
-            console.log("hjf")
+            console.log("else");
         }
     });
 }
+
+
+// ------------------section-8  logic ------------------------
+
 let imagedetails = [
     {
         id: 1,
@@ -118,3 +139,43 @@ getimages.forEach((eachitem) => {
         }
     });
 });
+
+
+// ------------------section-5 logic ------------------------
+
+
+function showCard(index) {
+    cards.forEach((card, i) => {
+        card.classList.remove('active');
+        if (i === index) {
+            card.classList.add('active');
+        }
+    });
+
+    // Sync circular image changer
+    document.querySelectorAll('#change-img #circular-img-changer').forEach((circle, i) => {
+        circle.style.backgroundColor = (i === index) ? '#F97C5A' : '#ccc';
+    });
+}
+
+document.getElementById('left-btn').addEventListener('click', () => {
+    currentCardIndex = (currentCardIndex > 0) ? currentCardIndex - 1 : cards.length - 1;
+    showCard(currentCardIndex);
+});
+
+document.getElementById('right-btn').addEventListener('click', () => {
+    currentCardIndex = (currentCardIndex < cards.length - 1) ? currentCardIndex + 1 : 0;
+    showCard(currentCardIndex);
+});
+
+// Mobile click event to show/hide text
+if (mobileView) {
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('active');
+        });
+    });
+}
+
+// Initialize the first card to be visible
+showCard(currentCardIndex);
