@@ -795,7 +795,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #181818; /* Change background color */
+    background-color: rgba(24, 24, 24, 0.9); /* Change background color */
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -811,7 +811,6 @@
 
 .card:hover .card-info {
     opacity: 1; /* Show the text on hover */
-    
 }
 
 #change-img {
@@ -849,9 +848,10 @@
         height: auto;
     }
 
-    .card:first-child {
+    .card:nth-child(1) , .card:nth-child(2) , .card:nth-child(3), .card:nth-child(4) {
         display: flex;
         width: 300px;
+        height: 400px;
     }
 
     #change-img-btn {
@@ -880,6 +880,7 @@
     }
 
     .card.active .card-info {
+        color: white;
         display: flex;
     }
 

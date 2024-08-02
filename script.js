@@ -18,8 +18,9 @@ let getImageContainer = document.getElementById("img-containers");
 
 
 let currentCardIndex = 0;
-const cards = document.querySelectorAll('#cards-block #card-1');
-const mobileView = window.matchMedia("(max-width: 600px)").matches;
+const cards = document.querySelectorAll('#cards-block .card');
+const circularImgChangers = document.querySelectorAll('#change-img .circular-img-changer');
+const totalCards = cards.length;
 
 
 console.log(dropdownbtn)
@@ -144,38 +145,32 @@ getimages.forEach((eachitem) => {
 // ------------------section-5 logic ------------------------
 
 
+
 function showCard(index) {
+    // Hide all cards and show the selected card
     cards.forEach((card, i) => {
-        card.classList.remove('active');
-        if (i === index) {
-            card.classList.add('active');
-        }
+        card.style.display = (i === index) ? 'flex' : 'none';
     });
 
-    // Sync circular image changer
-    document.querySelectorAll('#change-img #circular-img-changer').forEach((circle, i) => {
-        circle.style.backgroundColor = (i === index) ? '#F97C5A' : '#ccc';
+    // Update circular image changers
+    circularImgChangers.forEach((circle, i) => {
+        if (i === index) {
+            circle.classList.add('active'); // Add active class to the current indicator
+        } else {
+            circle.classList.remove('active'); // Remove active class from inactive indicators
+        }
     });
 }
 
+// Show the initial card
+showCard(currentCardIndex);
+
 document.getElementById('left-btn').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex > 0) ? currentCardIndex - 1 : cards.length - 1;
+    currentCardIndex = (currentCardIndex > 0) ? currentCardIndex - 1 : totalCards - 1;
     showCard(currentCardIndex);
 });
 
 document.getElementById('right-btn').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex < cards.length - 1) ? currentCardIndex + 1 : 0;
+    currentCardIndex = (currentCardIndex < totalCards - 1) ? currentCardIndex + 1 : 0;
     showCard(currentCardIndex);
 });
-
-// Mobile click event to show/hide text
-if (mobileView) {
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            card.classList.toggle('active');
-        });
-    });
-}
-
-// Initialize the first card to be visible
-showCard(currentCardIndex);
