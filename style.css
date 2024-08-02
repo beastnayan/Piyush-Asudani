@@ -606,7 +606,7 @@
 #label{
     display :flex;
     padding-bottom: 10px; 
-    justify-content:space-evenly;
+    justify-content:flex-start;
     align-items: center;
    
 }
@@ -625,7 +625,7 @@
    
     font-size: 1.2rem;
     color: white;
-    /* width: 45%; */
+    width: 45%;
     /* background-color: green; */
     padding: 10px 10px;
 
@@ -633,8 +633,9 @@
 }
 
 #drop-down{
- /* margin-left: 350px; */
  color: white;
+
+
 
 }
 
@@ -646,13 +647,15 @@
 
 #drop-down-content{
     display: none;
-    padding-bottom: 12px;
+    /* padding-bottom: 12px; */
     color: grey;
     font-size: 1rem;
+    padding: 20px 0;
 }
 
 #drop-down-content ul{
-    /* padding: 0 30px; */
+    padding: 0 30px;
+  
 
 }
 
@@ -676,11 +679,15 @@
 #sec-4-side-img{
     padding: 10px;
 }
-
+#accordian-content{
+   width: 35%;
+}
 
 @media only screen and (max-width:600px){
     #accordian-content{
         order: 2;
+        width: 100%;
+
     }
     #sec-4-side-img{
         order: 1;
@@ -738,18 +745,19 @@
 
     #drop-down-content{
         display: none;
-        padding-bottom: 12px;
+        /* padding-bottom: 12px; */
         color: grey;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
 
     }
+
+ 
       
 }
 
 
 /* ----------------section-5---------------------------- */
 #section-5 {
-    /* height: 100vh; */
     background-color: #0c0c0c;
 }
 
@@ -773,44 +781,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Allows child elements to be positioned absolutely */
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
 }
 
 .card img {
     width: 100%;
-    height: 100%; /* Ensure image covers the full dimensions of the card */
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
     transition: opacity 0.3s ease;
 }
 
 .card-info {
-    position: absolute; /* Position text over the image */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Take the full size of the card */
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(24, 24, 24, 0.9); /* Change background color */
+    background-color: rgba(24, 24, 24, 0.9);
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: center;
     border-radius: 10px;
     padding: 10px;
-    box-sizing: border-box; /* Ensure padding does not affect the size */
+    box-sizing: border-box;
 }
 
 .card:hover img {
-    opacity: 0; /* Hide the image on hover */
+    opacity: 0;
 }
 
 .card:hover .card-info {
-    opacity: 1; /* Show the text on hover */
+    opacity: 1;
 }
 
 #change-img {
@@ -848,7 +856,7 @@
         height: auto;
     }
 
-    .card:nth-child(1) , .card:nth-child(2) , .card:nth-child(3), .card:nth-child(4) {
+    .card.active {
         display: flex;
         width: 300px;
         height: 400px;
@@ -876,7 +884,7 @@
 
     .card-info {
         display: none;
-        background-color: #181818; /* Ensure the background color is set */
+        background-color: #181818;
     }
 
     .card.active .card-info {
@@ -888,7 +896,6 @@
         display: none;
     }
 }
-
 
 
 /* -----------------------section-6---------------------------------- */
