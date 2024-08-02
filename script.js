@@ -1,5 +1,10 @@
+
+// ------------------accordian-property-declareation------------------------
+
 let dropdownbtn = document.querySelectorAll("#drop-down");
 let dropdowncontent = document.querySelectorAll("#drop-down-content");
+
+// ------------------section-8 variable ------------------------
 
 let getimages = document.querySelectorAll(".image-1");
 let getUsername = document.getElementById("username");
@@ -8,7 +13,20 @@ let getDiscription = document.getElementById("discription");
 let getUlList = document.getElementById("ul-list");
 let getImageContainer = document.getElementById("img-containers");
 
+
+// ------------------section-5 variable ------------------------
+
+
+let currentCardIndex = 0;
+const cards = document.querySelectorAll('#cards-block .card');
+const circularImgChangers = document.querySelectorAll('#change-img .circular-img-changer');
+const totalCards = cards.length;
+
+
 console.log(dropdownbtn)
+
+// ------------------saccordian logic ------------------------
+
 for (let i = 0; i < dropdownbtn.length; i++) {
     dropdownbtn[i].addEventListener("click", function() {
         // Close all dropdown contents
@@ -21,17 +39,21 @@ for (let i = 0; i < dropdownbtn.length; i++) {
 
         // Toggle the clicked dropdown content
         this.classList.toggle("active");
-        if (dropdownbtn[i].style.display == "block") {
+        if (dropdowncontent[i].style.display === "block") {
             dropdownbtn[i].innerHTML = "+";
             dropdowncontent[i].style.display = "none";
-            
+            console.log("if");
         } else {
             dropdownbtn[i].innerHTML = "-";
             dropdowncontent[i].style.display = "block";
-            console.log("hjf")
+            console.log("else");
         }
     });
 }
+
+
+// ------------------section-8  logic ------------------------
+
 let imagedetails = [
     {
         id: 1,
@@ -117,4 +139,38 @@ getimages.forEach((eachitem) => {
             });
         }
     });
+});
+
+
+// ------------------section-5 logic ------------------------
+
+
+
+function showCard(index) {
+    // Hide all cards and show the selected card
+    cards.forEach((card, i) => {
+        card.style.display = (i === index) ? 'flex' : 'none';
+    });
+
+    // Update circular image changers
+    circularImgChangers.forEach((circle, i) => {
+        if (i === index) {
+            circle.classList.add('active'); // Add active class to the current indicator
+        } else {
+            circle.classList.remove('active'); // Remove active class from inactive indicators
+        }
+    });
+}
+
+// Show the initial card
+showCard(currentCardIndex);
+
+document.getElementById('left-btn').addEventListener('click', () => {
+    currentCardIndex = (currentCardIndex > 0) ? currentCardIndex - 1 : totalCards - 1;
+    showCard(currentCardIndex);
+});
+
+document.getElementById('right-btn').addEventListener('click', () => {
+    currentCardIndex = (currentCardIndex < totalCards - 1) ? currentCardIndex + 1 : 0;
+    showCard(currentCardIndex);
 });
