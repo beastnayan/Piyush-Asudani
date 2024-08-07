@@ -16,13 +16,9 @@ let getImageContainer = document.getElementById("img-containers");
 
 // ------------------section-5 variable ------------------------
 
-
 let currentCardIndex = 0;
 const cards = document.querySelectorAll('#cards-block .card');
 const circularImgChangers = document.querySelectorAll('#change-img .circular-img-changer');
-const totalCards = cards.length;
-
-
 console.log(dropdownbtn)
 
 // ------------------saccordian logic ------------------------
@@ -147,30 +143,44 @@ getimages.forEach((eachitem) => {
 
 
 function showCard(index) {
-    // Hide all cards and show the selected card
     cards.forEach((card, i) => {
-        card.style.display = (i === index) ? 'flex' : 'none';
+        card.classList.remove('active');
+        if (i === index) {
+            card.classList.add('active');
+        }
     });
 
-    // Update circular image changers
+    // Sync circular image changer
     circularImgChangers.forEach((circle, i) => {
-        if (i === index) {
-            circle.classList.add('active'); // Add active class to the current indicator
-        } else {
-            circle.classList.remove('active'); // Remove active class from inactive indicators
-        }
+        circle.style.backgroundColor = (i === index) ? '#F97C5A' : '#ccc';
     });
 }
 
-// Show the initial card
-showCard(currentCardIndex);
-
 document.getElementById('left-btn').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex > 0) ? currentCardIndex - 1 : totalCards - 1;
+    currentCardIndex = (currentCardIndex > 0) ? currentCardIndex - 1 : cards.length - 1;
     showCard(currentCardIndex);
+    console.log("leftbtn-clicked");
+    
 });
 
 document.getElementById('right-btn').addEventListener('click', () => {
-    currentCardIndex = (currentCardIndex < totalCards - 1) ? currentCardIndex + 1 : 0;
+    currentCardIndex = (currentCardIndex < cards.length - 1) ? currentCardIndex + 1 : 0;
     showCard(currentCardIndex);
+    console.log("rightbtn-clicked");
+
 });
+
+// Mobile detection
+const mobileView = window.matchMedia("(max-width: 600px)").matches;
+
+if (mobileView) {
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Toggle active class on click
+            card.classList.toggle('active');
+        });
+    });
+}
+
+// Initialize the first card to be visible
+showCard(currentCardIndex);
